@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerMove : MonoBehaviour {
     private Rigidbody2D body2d;
-    public float speed;
+    public float speed = 5f;
 
 	
 	void Start ()
@@ -15,9 +15,11 @@ public class PlayerMove : MonoBehaviour {
 
     private void FixedUpdate()
     {
-        float horizontal = Input.GetAxis("Horizontal");
-        float vertical = Input.GetAxis("Vertical");
-        body2d.velocity = new Vector2(horizontal * speed, vertical * speed);
+        float inputX = Input.GetAxis("Horizontal");
+        float inputY = Input.GetAxis("Vertical");
+        body2d.velocity = new Vector2(inputX * speed, inputY * speed);
+
+        
 
     }
 
